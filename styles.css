@@ -1,0 +1,65 @@
+/* Reseteo de margenes */
+*{
+    margin: 0;              /*  Reseteamos todos los margenes a 0 */
+    padding: 0;             /*  Espacio interno que se establece entre el contenido 
+                                de un elemento HTML y sus bordes.                   */
+
+    box-sizing: border-box; /*  Propiedad que cambia el modo en que se calcula el 
+                                ancho y alto de un elemento. Simplifica el modelo
+                                de caja, haciendo que el tamaño que se define sea
+                                el tamaño real que ocupa el elemento en pantalla.   */
+}
+
+/* Variables */
+:root{
+    --color-fondo: #313e51;
+    --color-pregunta: #bdd72d;
+    --color-fondo-opcion: #3c4c67;
+    --color-opcion: #c5bfbf;
+    --color-opcion-hover: #000;
+
+    --tamaño-pregunta: 2rem;
+    --tamaño-opcion: 1.8rem;
+}
+
+/* Creamos la fuente. Utilizamos una fuente local */
+@font-face{
+    font-family: 'Departure Mono';  /*  Le ponemos nombre a la fuente. No tiene
+                                        por que ser el mismo de la fuente*/
+    src: url(./assets/fonts/DepartureMono-Regular.otf)
+}
+
+
+/* Configuracion del body */
+body{
+    background-color: var(--color-fondo);     /* Color de fondo */
+    font-family: 'Departure Mono';            /* Fuente */
+}
+
+/* Configuración clase pregunta */
+.pregunta{
+    color: var(--color-pregunta);
+    font-size: var(--tamaño-pregunta);
+    margin: 8px 8px 32px;
+}
+
+.opcion{
+    background-color: var(--color-fondo-opcion);
+    color: var(--color-opcion);
+    margin: 8px;
+    padding: 4px;
+    font-size: var(--tamaño-opcion);
+    border-radius: 4px;
+    cursor: pointer;    /*  Hace que el cursor cambie a una mano
+                            cuando pasa por encima de la opción   */
+
+    &:hover{            /*  :hover es una pseudo-clase en CSS que permite definir 
+                            estilos específicos para un elemento cuando el usuario 
+                            coloca el cursor del ratón encima de él, sin necesidad 
+                            de hacer clic. En este contexto la '&' hace referencia
+                            a la clase '.opcion' */
+
+        background-color: var(--color-pregunta);
+        color: var(--color-opcion-hover);
+    }  
+}
